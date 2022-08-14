@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Making comment with DOM</title>
+</head>
+<body>
+    <div id="comment-container">
+        <h1>I am making a comment box with adding comment</h1>
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Dignissimos cupiditate et atque rem sit iure excepturi quisquam deserunt, beatae doloribus autem vero aliquam accusantium in a totam. Sint, voluptate explicabo?</p>
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Dignissimos cupiditate et atque rem sit iure excepturi quisquam deserunt, beatae doloribus autem vero aliquam accusantium in a totam. Sint, voluptate explicabo?</p>
+    </div>
+    <div>
+        <textarea name="" id="text-area" cols="50" rows="8"></textarea><br>
+        <button id="btn-post">post</button>
+    </div>
+
+    <script>
+        document.getElementById('btn-post').addEventListener('click', function(){
+
+            const comentBox = document.getElementById('text-area');
+            const newComent = comentBox.value;
+
+            const commentContainer = document.getElementById('comment-container');
+            const p = document.createElement('p');
+            p.innerText = newComent;
+            commentContainer.appendChild(p);
+
+            comentBox.value = '';
+
+
+        })
+    </script>
+</body>
+</html>

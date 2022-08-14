@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>event changer</title>
+</head>
+<body>
+    <h1>speech will change by click</h1>
+    <h3 id="speech">speech</h3>
+    <button onclick="handleOnClick()">Click Me</button>
+    <button id="update">Update</button>
+
+    <!-- input display  -->
+    <h3 id="input-text-display">default input text</h3>
+    <input id="input-field" type="text">
+    <button id="btn-update">Set</button>
+
+    <!-- javascript file  -->
+    <script>
+        function handleOnClick(){
+            const handlerStatus = document.getElementById('speech');
+            handlerStatus.innerText = 'Yes, you found me after a click'
+        }
+
+        // 2nd option 
+        document.getElementById('update').addEventListener('click',function(){
+            const updateStatus = document.getElementById('speech');
+            updateStatus.innerText = 'Yeah! you updated the speech'
+        })
+
+        // input field script 
+        document.getElementById('btn-update').addEventListener('click', function(){
+            const inputField = document.getElementById('input-field');
+            const inputText = inputField.value;
+
+            const p = document.getElementById('input-text-display');
+            p.innerText = inputText;
+            // clearing input field 
+            inputField.value = ' ';
+        })
+    </script>
+</body>
+</html>

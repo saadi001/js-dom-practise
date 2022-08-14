@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Delete By DOm</title>
+</head>
+<body>
+    <h1 id="text-for-delete">It will delete</h1>
+    <input id="delete-text" type="text" placeholder="please type delete">
+    <button id="btn-delete" disabled>delete</button>
+
+    <script>
+        // delete button will not show and disabled untill we write delete 
+        document.getElementById('delete-text').addEventListener('keyup',function(event){
+            const text = event.target.value;
+            const deleteButton = document.getElementById('btn-delete');
+            if(text === 'delete'){
+                deleteButton.removeAttribute('disabled');
+            }
+            else{
+                deleteButton.setAttribute('disabled',true);
+            }
+
+        })
+            // for delete 
+        document.getElementById('btn-delete').addEventListener('click',function(){
+            const secret = document.getElementById('text-for-delete');
+            secret.style.display = 'none';
+
+            
+        })
+    </script>
+</body>
+</html>
