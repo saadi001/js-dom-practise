@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Delegate with DOM</title>
+</head>
+<body>
+    <section>
+        <ul id="list-container">
+            <li class="item">Lorem, ipsum dolor.</li>
+            <li class="item">Lorem, hudao vai</li>
+            <li class="item">jani na vai</li>
+            <li class="item">lorem ken ase na vai</li>
+            <li class="item">eta ami nijeo jani na</li>
+            <li class="item">tui janbi kivabe</li>
+        </ul>
+        <button id="add-btn">Add item</button>
+    </section>
+
+<!-- javascript file  -->
+    <script>
+        // delete when click on the element 
+        // const items = document.getElementsByClassName('item');
+        // for(const item of items){
+        //     item.addEventListener('click',function(event){
+        //         event.target.parentNode.removeChild(event.target);
+        //     })
+        // }
+
+        document.getElementById('list-container').addEventListener('click',function(event){
+            event.target.parentNode.removeChild(event.target);
+        })
+
+        document.getElementById('add-btn').addEventListener('click',function(){
+            const listConainer = document.getElementById('list-container');
+            
+            const li = document.createElement('li');
+            li.innerText = 'new item added';
+            li.classList.add('item');
+            listConainer.appendChild(li);
+        })
+
+    </script>
+</body>
+</html>
